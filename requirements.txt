@@ -1,1 +1,14 @@
-# Add your project dependencies here
+emoji==2.14.1
+numpy==2.3.0
+pandas==2.3.0
+pillow==11.2.1
+pyaes==1.6.1
+pyasn1==0.6.1
+python-dateutil==2.9.0.post0
+python-dotenv==1.1.0
+pytz==2025.2
+rsa==4.9.1
+six==1.17.0
+Telethon==1.40.0
+tzdata==2025.2
+-e git+https://github.com/EYOELTEKLE/amharic-extractor-challenge.git@4d0120313c510e47859a84b1f9830a7e71313f08#egg=your_project_name

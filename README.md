@@ -14,4 +14,32 @@ pip install -r requirements.txt
 
 ## Usage
 
-Add usage instructions here.
+### 1. Setup Telegram API Credentials
+
+1. Go to [my.telegram.org](https://my.telegram.org) and sign in.
+2. Create a new application to get your `API_ID` and `API_HASH`.
+3. Add the following to your `.env` file in the project root:
+   ```env
+   TELEGRAM_API_ID=your_api_id
+   TELEGRAM_API_HASH=your_api_hash
+   TELEGRAM_SESSION=amharic_ecom
+   ```
+
+### 2. Select Channels
+
+Edit the `CHANNELS` list in `src/services/telegram_ingest.py` to include at least 5 Ethiopian e-commerce Telegram channels (by username or link).
+
+### 3. Run Data Ingestion
+
+```bash
+python src/services/telegram_ingest.py
+```
+This will start listening to the specified channels and save messages (text, images, documents) in real time.
+
+### 4. Data Format
+- Preprocessed data is saved in `data/telegram_messages.jsonl`.
+- Media files (images, docs) are saved in `data/media/`.
+- Each JSONL line includes: `id`, `channel`, `sender`, `timestamp`, `text`, `media_path`, `raw_text`.
+
+### 5. Amharic Preprocessing
+- Text is tokenized, normalized, and cleaned for Amharic-specific features using `src/utils/preprocessing.py`.
