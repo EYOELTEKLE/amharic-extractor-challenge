@@ -169,4 +169,4 @@ logs/
 *.session
 
 notebooks/results/*
-notebooks/amharic_ner_model/*
+notebooks/amharicnermodel/*
