@@ -167,3 +167,6 @@ logs/
 
 #Sesssion Data
 *.session
+
+notebooks/results/*
+notebooks/amharic_ner_model/*
